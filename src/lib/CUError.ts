@@ -10,9 +10,28 @@ import type { LMErrorErr, LMErrorRes, LMErrorResHeader } from '@leismore/lmos-no
 
 class CUError extends LMError {
 
+    /**
+     * @throws {Error}
+     *   invalid_error
+     *   invalid_error_message
+     *   invalid_error_code
+     *   invalid_http_response
+     *   invalid_http_statusCode
+     *   invalid_http_header
+     *   invalid_http_body
+     *   invalid_previous
+     */
     public constructor(error: LMErrorErr, response?: LMErrorRes, previous?: Error) {
-        super(error, response, previous);
+
+        try {
+            super(error, response, previous);
+        } catch (err) {
+            throw err;
+        }
+        
+
         this.name = 'CUError';
+
     }
 
 }
