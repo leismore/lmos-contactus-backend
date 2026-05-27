@@ -5,6 +5,12 @@
  * 1       unknown
  * 2       phone_number_invalid
  * 3       phone_number_invalid_country_code
+ * 9       message_generic_error
+ * 10      message_invalid_name
+ * 11      message_invalid_email
+ * 12      message_invalid_phone_number
+ * 13      message_invalid_message
+ * 14      message_invalid_preferred_method
  */
 
 import { LMError } from '@leismore/lmos-nodejs-lmerror';
