@@ -2,7 +2,9 @@
  * The Error class for this project.
  * 
  * Code    Message
- * 1       Unknown
+ * 1       unknown
+ * 2       phone_number_invalid
+ * 3       phone_number_invalid_country_code
  */
 
 import { LMError } from '@leismore/lmos-nodejs-lmerror';
