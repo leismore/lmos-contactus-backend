@@ -92,7 +92,14 @@ class Message {
         }
 
         // Preferred Method
-        if ( !Object.values(PreferredMethod).includes(data.preferredMethod) ) {
+        if ( typeof data.preferredMethod !== 'number' ||
+             !Object.values(PreferredMethod).includes(data.preferredMethod) ) {
+            throw new CUError(
+                {code: '14', message: 'message_invalid_preferred_method'}
+            );
+        }
+
+        if ( data.preferredMethod === PreferredMethod.Phone && data.phoneNumber === undefined ) {
             throw new CUError(
                 {code: '14', message: 'message_invalid_preferred_method'}
             );
