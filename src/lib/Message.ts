@@ -7,6 +7,10 @@ import { PhoneNumber } from './PhoneNumber.js';
 import validator from 'validator';
 import config from '../config.json' with { type: 'json' };
 
+// This checks only character sets only. Limited characters allowed
+const regexName    = /^[\p{L}\p{N}\u0020\-\.]+$/iu;
+const regexMessage = /^[\p{L}\p{N}\u0020\n\r\.,\?!\-:]+$/iu;
+
 enum PreferredMethod {
     Email,
     Phone
@@ -52,6 +56,12 @@ class Message {
             );
         }
 
+        if ( !regexName.test(data.name) ) {
+            throw new CUError(
+                {code: '10', message: 'message_invalid_name'}
+            );
+        }
+
         // Email
         if ( typeof data.email !== 'string' ||
             data.email.length < config.email.lengthMin ||
@@ -86,6 +96,12 @@ class Message {
         }
 
         if ( data.message.length === 0 || data.message.length > config.message.lengthMax ) {
+            throw new CUError(
+                {code: '13', message: 'message_invalid_message'}
+            );
+        }
+
+        if ( !regexMessage.test(data.message) ) {
             throw new CUError(
                 {code: '13', message: 'message_invalid_message'}
             );
