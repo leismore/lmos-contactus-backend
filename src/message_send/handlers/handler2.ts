@@ -26,7 +26,8 @@ async function handler2(req: Request, res: Response, next: NextFunction): Promis
                 `Email:     ${message.email}\n` +
                 `Phone:     ${message.phoneNumber === undefined ? 'N/A' : String(message.phoneNumber)}\n` +
                 `Preferred: ${message.preferredMethod === MessagePreferredMethod.Email ? 'Email' : 'Phone'}\n\n` +
-                `Message:   ${message.message}`
+                `Message:\n\n` +
+                `${message.message}`
             )
 
         });
