@@ -50,3 +50,11 @@
  *     message: Message
  * }
  */
+
+import { handler1 } from './handlers/handler1.js';
+import { handler2 } from './handlers/handler2.js';
+
+export {
+    handler1 as message_send_handler1,
+    handler2 as message_send_handler2
+};

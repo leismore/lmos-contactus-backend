@@ -11,6 +11,10 @@
  * 12      message_invalid_phone_number
  * 13      message_invalid_message
  * 14      message_invalid_preferred_method
+ * 20      nodemailer_generic_error
+ * 21      nodemailer_transport_error
+ * 22      nodemailer_envelope_error
+ * 23      nodemailer_send_error
  */
 
 import { LMError } from '@leismore/lmos-nodejs-lmerror';

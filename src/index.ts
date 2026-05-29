@@ -1,3 +1,9 @@
+/**
+ * app.locals: {
+ *     mailTransporter: nodemailer.Transporter
+ * }
+ */
+
 import express from 'express';
 
 const app = express();
