@@ -9,7 +9,7 @@
 
         "transporter": {
             "host"   : "YOUR_SMTP_HOST",
-            "port"   : 587,
+            "port"   : "587",
             "secure" : false
         },
 

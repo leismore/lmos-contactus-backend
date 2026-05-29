@@ -11,7 +11,7 @@ function get_mail_transporter(): nodemailer.Transporter {
     const transporter = nodemailer.createTransport({
 
         host   : config.nodeMailer.transporter.host,
-        port   : config.nodeMailer.transporter.port,
+        port   : Number(config.nodeMailer.transporter.port),
         secure : config.nodeMailer.transporter.secure,
         auth: {
             user: cred.nodeMailer.user,
