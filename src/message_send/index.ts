@@ -44,4 +44,9 @@
  * 
  * When config.app.debug = false, no body will be sent with 500 response.
  * 
+ * ---
+ * 
+ * res.locals: {
+ *     message: Message
+ * }
  */
