@@ -1,0 +1,46 @@
+{
+    "app": {
+        "name": "@leismore/lmos-contactus-backend",
+        "debug": false,
+        "port": "YOUR_PORT"
+    },
+
+    "nodeMailer": {
+
+        "transporter": {
+            "host"   : "YOUR_SMTP_HOST",
+            "port"   : 587,
+            "secure" : false
+        },
+
+        "envelope": {
+            "from"  : "YOUR_FROM_EMAIL",
+            "to"    : "YOUR_TO_EMAIL"
+        }
+    },
+
+    "name": {
+        "lengthMax": 128
+    },
+
+    "email": {
+        "lengthMin": 6,
+        "lengthMax": 254
+    },
+
+    "phone": {
+        "required": false
+    },
+
+    "message": {
+        "lengthMax": 1024
+    },
+
+    "routes": {
+
+        "messageSend": {
+            "path"      : "/api/message-send"
+        }
+
+    }
+}
